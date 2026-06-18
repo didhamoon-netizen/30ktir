@@ -570,129 +570,43 @@ body::before {
   .scroll-text-line { font-size: 1.1rem; }
 }
 @media (max-width: 768px) {
-  /* تنظیمات کلی برای جلوگیری از اسکرول افقی */
-  html {
-    font-size: 14px !important;
-  }
-  body, .app-shell, .app-main, main {
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
+  html { font-size: 14px; }
+  body, .app-shell, .app-main { width: 100%; max-width: 100vw; overflow-x: hidden; }
+
+  .navbar-inner { gap: 4px; padding: 0 8px; }
+  .navbar-links .nav-link { padding: 6px 8px; }
+  .navbar-links .nav-link span { display: none; }
+  .search-bar { max-width: 140px; }
+
+  .hero-title { font-size: clamp(2rem, 8vw, 3rem) !important; padding: 0 10px; }
+  .hero-desc { font-size: 0.9rem; padding: 0 12px; }
+  .hero-actions { flex-direction: column; align-items: center; gap: 10px; }
+  .hero-stats { gap: 10px; }
+  .stat-card { min-width: 90px; padding: 16px 20px; }
+
+  .scroll-text-container { max-width: 100% !important; padding: 0 12px 0 0 !important; margin: 0 0 0 auto !important; }
+  .scroll-text-line { font-size: 1rem !important; line-height: 1.8 !important; }
+
+  .timeline-line { left: 12px !important; display: block !important; }
+  .timeline-row { grid-template-columns: 1fr !important; gap: 12px !important; position: relative; }
+  .timeline-row .timeline-dot { display: block !important; position: absolute; right: -18px; }
+  .timeline-row .timeline-spacer { display: none !important; }
+  .timeline-row.right .timeline-card, .timeline-row.left .timeline-card { 
+    grid-column: 1 !important; grid-row: 1 !important; max-width: 85% !important; 
+    justify-self: end !important; margin-right: 28px !important; margin-left: 0 !important; 
   }
 
-  /* هیرو و عناوین */
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem) !important;
-    padding: 0 10px;
-  }
-  .hero-desc {
-    font-size: 0.9rem;
-    padding: 0 12px;
-  }
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero-stats {
-    gap: 10px;
-  }
-  .stat-card {
-    min-width: 90px;
-    padding: 16px 20px;
-  }
+  .artists-drawer { width: 100% !important; max-width: 100% !important; }
 
-  /* اسکرول متن 50 خطی */
-  .scroll-text-container {
-    max-width: 100% !important;
-    padding: 0 8px 0 0 !important;
-    margin: 0 0 0 auto !important;
-  }
-  .scroll-text-line {
-    font-size: 1rem !important;
-    line-height: 1.8 !important;
-  }
+  .artist-hero { flex-direction: column !important; align-items: center !important; text-align: center !important; padding: 16px; }
+  .ah-photo, .ah-initials { width: 80px !important; height: 80px !important; font-size: 1.8rem !important; }
+  .ah-name { font-size: 1.5rem; }
+  .ah-meta { justify-content: center; }
 
-  /* نوبار */
-  .navbar-inner {
-    gap: 4px;
-    padding: 0 8px;
-  }
-  .navbar-links .nav-link {
-    padding: 6px 8px;
-  }
-  .navbar-links .nav-link span {
-    display: none;
-  }
-  .search-bar {
-    max-width: 140px;
-  }
-
-  /* تایم‌لاین - حالت عمودی و چسبیده به راست */
-  .timeline-line {
-    left: 12px !important;
-    display: block !important;
-  }
-  .timeline-row {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-  .timeline-row .timeline-dot {
-    display: block !important;
-    position: absolute;
-    right: -18px;
-  }
-  .timeline-row .timeline-spacer {
-    display: none !important;
-  }
-  .timeline-card {
-    width: auto !important;
-    max-width: 82% !important;
-    margin-right: 24px !important;
-    justify-self: end !important;
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-  }
-  .tc-name {
-    font-size: 0.9rem;
-  }
-
-  /* دراور */
-  .artists-drawer {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* صفحه هنرمند */
-  .artist-hero {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 16px;
-  }
-  .ah-photo, .ah-initials {
-    width: 80px !important;
-    height: 80px !important;
-    font-size: 1.8rem !important;
-  }
-  .ah-name {
-    font-size: 1.5rem;
-  }
-  .ah-meta {
-    justify-content: center;
-  }
-
-  /* گریدها */
-  .artworks-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
-    gap: 8px !important;
-  }
-  .styles-preview-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
-  }
-  .articles-preview-grid, .articles-grid {
-    grid-template-columns: 1fr !important;
-  }
+  .artworks-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important; gap: 8px !important; }
+  .styles-preview-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important; }
+  .articles-preview-grid, .articles-grid { grid-template-columns: 1fr !important; }
+}
   
 </style>
 </head>
